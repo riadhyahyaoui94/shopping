@@ -47,11 +47,13 @@ public class LivreService implements LivreServiceInterface {
 
     @Override
     public Livre retrieveLivrebyCat(Categorie cat) {
-        return null;
+       Livre l1= (Livre) livre.findByCategorie(cat);
+       return l1;
     }
 
     @Override
     public Livre retrieveLivrebyAuthor(String author) {
-        return null;
+       Livre l1= (Livre) livre.findByAuthor(author);
+       return l1;
     }
 }
