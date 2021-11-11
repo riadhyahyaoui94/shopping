@@ -1,10 +1,7 @@
 package com.boockstore.shopping.service;
-
 import com.boockstore.shopping.entities.User;
-import com.boockstore.shopping.repository.LivreRepo;
 import com.boockstore.shopping.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.ArrayList;
 import java.util.List;
 

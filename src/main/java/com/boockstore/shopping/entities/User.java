@@ -1,11 +1,11 @@
 package com.boockstore.shopping.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+
+import javax.persistence.*;
 
 @Entity
+@Table(name = "User")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,20 +15,23 @@ public class User {
     private  String login;
     private  String pwd;
     private String email;
-
+    private String roles;
+    private boolean active;
         public User() {
         }
 
-        public User(int id, String nom, String prenom, String login, String pwd, String email) {
-            this.id = id;
-            this.nom = nom;
-            this.prenom = prenom;
-            this.login = login;
-            this.pwd = pwd;
-            this.email = email;
-        }
+    public User(int id, String nom, String prenom, String login, String pwd, String email, String roles, boolean active) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.login = login;
+        this.pwd = pwd;
+        this.email = email;
+        this.roles = roles;
+        this.active = active;
+    }
 
-        public int getId() {
+    public int getId() {
             return id;
         }
 
@@ -75,8 +78,23 @@ public class User {
         public void setEmail(String email) {
             this.email = email;
         }
+       public String getRoles() {
+        return roles;
+    }
 
-        @Override
+    public void setRoles(String roles) {
+        this.roles = roles;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    @Override
         public String toString() {
             return "User{" +
                     "login='" + login + '\'' +
